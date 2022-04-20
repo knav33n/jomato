@@ -2,10 +2,17 @@ import { View, Text } from "react-native";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { Ionicons, AntDesign } from "react-native-vector-icons";
 
-const SearchBar = () => {
+const PLACES_API_KEY = process.env.PLACES_API_KEY;
+
+const SearchBar = ({ setCity }) => {
   return (
     <View style={{ marginTop: 15, flexDirection: "row" }}>
       <GooglePlacesAutocomplete
+        query={{ key: PLACES_API_KEY }}
+        onPress={(data, details = null) => {
+          const city = data.description.split(",")[0];
+          setCity(city);
+        }}
         placeholder="Search"
         renderLeftButton={() => (
           <View>
