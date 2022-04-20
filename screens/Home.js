@@ -10,7 +10,6 @@ import RestaurantItems, {
 import SearchBar from "../components/SearchBar";
 
 const YELP_API_KEY = process.env.YELP_API_KEY;
-export const PLACES_API_KEY = "AIzaSyAAaWiYJMCQt43OAnLuptdWXPB80s0wtJw";
 
 const Home = () => {
   const [restaurants, setRestaurants] = useState(localRestaurants);
