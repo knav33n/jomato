@@ -1,8 +1,7 @@
 import { View, Text } from "react-native";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { Ionicons, AntDesign } from "react-native-vector-icons";
-
-const PLACES_API_KEY = process.env.PLACES_API_KEY;
+import { PLACES_API_KEY } from "@env";
 
 const SearchBar = ({ setCity }) => {
   return (
